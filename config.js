@@ -1,7 +1,7 @@
 module.exports = {
   ETH_SERVER_PORT: 3002,
   AUTH_SERVER_PORT: 3003,
-  SERVER_URL: 'http://localhost',
+  SERVER_URL: '172.17.0.1',
   BLOCKCHAIN_PORT: 8545,
   DB_SERVER_PORT: 3004,
 };
