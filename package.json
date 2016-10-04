@@ -1,0 +1,37 @@
+{
+  "name": "auth-services",
+  "version": "1.0.0",
+  "description": "Authentication Services",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digitalsherpas/auth-services.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/digitalsherpas/auth-services/issues"
+  },
+  "homepage": "https://github.com/digitalsherpas/auth-services#readme",
+  "devDependencies": {
+    "eslint": "^3.7.0",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-jsx-a11y": "^2.2.2",
+    "eslint-plugin-react": "^6.3.0",
+    "ethereumjs-testrpc": "^2.2.7",
+    "nodemon": "^1.10.2",
+    "supertest": "^2.0.0"
+  },
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "request": "^2.75.0",
+    "request-promise": "^4.1.1"
+  }
+}
