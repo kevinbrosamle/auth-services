@@ -78,7 +78,8 @@ module.exports = {
           cb(null, 'Authorization failed');
         }
       }
-    }).catch((err) => {
+    })
+    .catch((err) => {
       cb(err, null);
     });
   },
