@@ -3,8 +3,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const config = require('./config');
 
-const jsonParser = bodyParser.json();
 const app = express();
+const jsonParser = bodyParser.json();
 
 const allowCrossDomain = (req, res, next) => { // enable CORS
   res.header('Access-Control-Allow-Origin', '*');
@@ -23,7 +23,7 @@ app.use(allowCrossDomain);
 app.use(jsonParser);
 
 app.post('/registerUser', (req, res) => {
-  awsCognitoController.registerUser(req.body.token, (error, result) => {
+  awsCognitoController.registerUser(req.body, (error, result) => {
     if (error) {
       res.status(500).send(error);
     } else {
