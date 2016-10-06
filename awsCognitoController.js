@@ -21,7 +21,7 @@ module.exports = {
     };
     const dataPhoneNumber = {
       Name: 'phone_number',
-      Value: userObj.phone_number,
+      Value: userObj.phone_number.toString(),
     };
     const dataName = {
       Name: 'name',
@@ -64,9 +64,9 @@ module.exports = {
         if (isVerified) {
           rp({
             method: 'POST',
-            url: `${config.SERVER_URL}:${config.DB_SERVER_PORT}/db/findOrCreateUser`,
+            url: `${process.env.DB_SERVER_URL || config.SERVER_URL}:${config.DB_SERVER_PORT}/db/findOrCreateUser`,
             body: {
-              token: userToken,
+              data: token.payload,
             },
             json: true,
           }).then((user) => {
