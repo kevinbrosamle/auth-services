@@ -21,7 +21,7 @@ module.exports = {
     };
     const dataPhoneNumber = {
       Name: 'phone_number',
-      Value: userObj.phone_number,
+      Value: userObj.phone_number.toString(),
     };
     const dataName = {
       Name: 'name',
