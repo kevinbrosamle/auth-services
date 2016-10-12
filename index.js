@@ -44,4 +44,6 @@ app.post('/verifyUser', (req, res) => {
   });
 });
 
-app.listen(config.AUTH_SERVER_PORT);
+app.listen(config.AUTH_SERVER_PORT, () => {
+  console.log('Running on', config.AUTH_SERVER_PORT);
+});

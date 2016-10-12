@@ -1,4 +1,5 @@
 module.exports = {
+  ETH_SERVER_URL: 'http://54.190.58.228',
   ETH_SERVER_PORT: 3002,
   AUTH_SERVER_PORT: 3003,
   SERVER_URL: 'http://localhost',
