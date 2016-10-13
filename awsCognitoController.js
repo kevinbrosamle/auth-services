@@ -19,20 +19,14 @@ module.exports = {
       Name: 'email',
       Value: userObj.email,
     };
-    const dataPhoneNumber = {
-      Name: 'phone_number',
-      Value: userObj.phone_number.toString(),
-    };
     const dataName = {
       Name: 'name',
       Value: userObj.name,
     };
     const attributeEmail = new awsCognito.CognitoUserAttribute(dataEmail);
-    const attributePhoneNumber = new awsCognito.CognitoUserAttribute(dataPhoneNumber);
     const attributeName = new awsCognito.CognitoUserAttribute(dataName);
 
     attributeList.push(attributeEmail);
-    attributeList.push(attributePhoneNumber);
     attributeList.push(attributeName);
 
     userPool.signUp(userObj.username, userObj.password, attributeList, null, (error, result) => {
@@ -64,7 +58,7 @@ module.exports = {
         if (isVerified) {
           rp({
             method: 'POST',
-            url: `${process.env.DB_SERVER_URL || config.SERVER_URL}:${config.DB_SERVER_PORT}/db/findOrCreateUser`,
+            url: `${config.DB_SERVER_URL}:${config.DB_SERVER_PORT}/db/findOrCreateUser`,
             body: {
               data: token.payload,
             },
