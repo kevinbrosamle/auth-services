@@ -19,20 +19,20 @@ module.exports = {
       Name: 'email',
       Value: userObj.email,
     };
-    const dataPhoneNumber = {
-      Name: 'phone_number',
-      Value: userObj.phone_number.toString(),
-    };
+    // const dataPhoneNumber = {
+    //   Name: 'phone_number',
+    //   Value: userObj.phone_number.toString(),
+    // };
     const dataName = {
       Name: 'name',
       Value: userObj.name,
     };
     const attributeEmail = new awsCognito.CognitoUserAttribute(dataEmail);
-    const attributePhoneNumber = new awsCognito.CognitoUserAttribute(dataPhoneNumber);
+    // const attributePhoneNumber = new awsCognito.CognitoUserAttribute(dataPhoneNumber);
     const attributeName = new awsCognito.CognitoUserAttribute(dataName);
 
     attributeList.push(attributeEmail);
-    attributeList.push(attributePhoneNumber);
+    // attributeList.push(attributePhoneNumber);
     attributeList.push(attributeName);
 
     userPool.signUp(userObj.username, userObj.password, attributeList, null, (error, result) => {
