@@ -64,7 +64,7 @@ module.exports = {
         if (isVerified) {
           rp({
             method: 'POST',
-            url: `${process.env.DB_SERVER_URL || config.SERVER_URL}:${config.DB_SERVER_PORT}/db/findOrCreateUser`,
+            url: `${config.DB_SERVER_URL}:${config.DB_SERVER_PORT}/db/findOrCreateUser`,
             body: {
               data: token.payload,
             },
